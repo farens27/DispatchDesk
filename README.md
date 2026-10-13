@@ -9,9 +9,6 @@ Handlers: report succeeds, unstable succeeds on second attempt, broken dead-lett
 ## Deliberate limits
 Single-process store; no multi-worker leases, broker, real integrations, authentication, audit log, or exactly-once promises. At most 20 active jobs and 100 retained jobs; oldest completed job evicted when full. Dead letters are retained. Do not use for production, secrets, or personal data. Public sandbox shares state among visitors. File replacement protects against partial writes, not guaranteed power-loss durability. For real deployments use transactional DB/broker, authenticated access, idempotent handlers and per-user rate limiting. Persistence errors stop worker rather than silently discard work.
 
-## VPS preview
+## Preview
 
-**[Open live demo](http://129.226.84.43/dispatchdesk/)**
-
-Public shared sandbox hosted on VPS. Use fictional data only; demo availability depends on VPS uptime.
-Service dispatchdesk binds localhost:6197; nginx /dispatchdesk/ proxies it. State /var/lib/dispatchdesk/jobs.json outside git. Service memory capped at 256 MB. No production database access.
+![DispatchDesk dashboard preview](preview.png)
